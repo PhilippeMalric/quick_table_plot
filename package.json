@@ -24,8 +24,11 @@
     "@ngrx/entity": "^12.4.0",
     "@ngrx/store": "^12.4.0",
     "@ngrx/store-devtools": "^12.4.0",
+    "d3": "^7.0.4",
+    "ngx-csv-parser": "0.0.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
+    "xlsx": "^0.17.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -33,6 +36,7 @@
     "@angular/cli": "~12.1.0",
     "@angular/compiler-cli": "~12.1.0",
     "@ngrx/schematics": "^12.4.0",
+    "@types/d3": "^7.0.0",
     "@types/jasmine": "~3.7.1",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",

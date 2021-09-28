@@ -1,0 +1,79 @@
+<div>
+  <mat-card  class="mat-elevation-z10 m-3">
+
+
+    <mat-card-header>
+  
+      <mat-card-title>Load CSV</mat-card-title>
+  
+    </mat-card-header>
+  
+    <mat-card-content>
+      <div class="container">
+        
+   
+      
+     
+      </div>
+  </mat-card-content>
+  </mat-card>
+
+ 
+    <!--*ngIf="form.valid"-->
+    <div class="upload">
+      <input #fileInput style="display: none;"
+      type="file" #csvReader 
+      name="Upload DD" 
+      id="txtFileUpload" 
+      (change)="uploadListener($event)" accept=".csv" 
+      /> 
+      <button mat-raised-button color="primary" (click)="fileInput.click()" >Téléverser un fichier csv</button>
+    </div>
+    <p >{{name}}</p>
+  </div>
+
+
+  
+<mat-card  class="mat-elevation-z10 m-3">
+
+
+  <mat-card-header>
+
+    <mat-card-title>
+      <mat-chip-list aria-label="Props">
+        <mat-chip *ngFor="let prop of propsTab" color="primary" (click)="selectProp(prop.key)">
+          {{prop.key}}
+        </mat-chip>
+      </mat-chip-list>
+
+    </mat-card-title>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="container">
+      
+      {{selectedValue}}
+    
+   
+    </div>
+</mat-card-content>
+</mat-card>
+
+
+
+
+
+<!---
+<button mat-raised-button (click)='uploadVar()'>add</button>
+<button mat-raised-button (click)='printValue()'>value</button>
+-->
+
+
+
+
+
+
+
+
+

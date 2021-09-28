@@ -1,0 +1,12 @@
+<h2>Graph</h2>
+<button mat-button color="primary" (click)="toggleDataset()">RePlot</button>
+<button mat-button color="accent" (click)="secondPlot()">Diff</button>
+<div *ngIf="waiting" class="flex-container">
+    <p class="flex-item"  style="color: red;" >
+
+        Attendez!
+    
+    </p>
+</div>
+
+<figure  id="bar"></figure>

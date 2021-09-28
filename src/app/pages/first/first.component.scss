@@ -1,0 +1,33 @@
+.example-small-box, .example-large-box {
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .example-small-box {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .example-large-box[_ngcontent-dnt-c150] {
+    margin: auto;
+    height: auto;
+    width: auto;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.bottom-e{
+  position: absolute;
+  bottom: 20px;
+  display: block;
+  top: auto;
+  margin-bottom: 10px;
+}
+ 

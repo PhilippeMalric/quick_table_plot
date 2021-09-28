@@ -2,3 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-step-label{
+    color: rgb(135, 133, 133) !important;
+}
+
+.mat-step-label.mat-step-label-active {
+    color: rgb(0, 0, 0) !important;
+}
+
+.mat-form-field-label{
+    color:  rgb(0, 0, 0) !important;
+}

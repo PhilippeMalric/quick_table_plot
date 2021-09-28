@@ -1,2 +1,64 @@
 
-<button mat-raised-button (click)="test1()"> test1 </button>
+
+<div style="width: 100%;">
+
+  <mat-tab-group dynamicHeight color="accent" backgroundColor="primary" >
+    <mat-tab mat-align-tabs="start" label="Load">
+      <div class="example-small-box mat-elevation-z4">
+        <button mat-raised-button (click)='test1()'>+</button>
+      </div>
+      <div class="example-large-box mat-elevation-z4" style="min-height: 600px;">
+        <mat-stepper #stepper style="height: 100%;width: 100%; background-color:white" color="accent">
+          <mat-step >
+            <ng-template matStepLabel>Excel Files</ng-template>
+            <load-excel></load-excel>
+            <div  class="bottom-e">
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </mat-step>
+          <mat-step [stepControl]="firstFormGroup" >
+            
+            <ng-template matStepLabel>CSV files</ng-template>
+            <load-csv></load-csv>
+            <form [formGroup]="firstFormGroup" >
+              
+              <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+              </mat-form-field>
+              
+        
+              <div  class="bottom-e">
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+           
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" >
+            <ng-template matStepLabel>Done</ng-template>
+            
+            <form [formGroup]="secondFormGroup"  >
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="secondCtrl" required>
+            </form>
+            <p>You are now done.</p>
+            <div class="bottom-e">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-stepper>
+        
+      </div>
+      
+    </mat-tab>
+    <mat-tab mat-align-tabs="start" label="Data" >
+      <div class="example-large-box mat-elevation-z4" style="display: block;">
+        <app-general-view></app-general-view>
+       
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  
+</div>
