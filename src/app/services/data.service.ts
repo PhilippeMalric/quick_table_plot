@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import * as XLSX from 'xlsx';
+import { VariablesGroup } from '../model/VariablesGroup';
 
 
 
@@ -19,14 +20,16 @@ export class DataService {
   tables : any[]
   variables$: BehaviorSubject<any>;
   dataset$: BehaviorSubject<any[]>;
+  variablesGroup$: BehaviorSubject<any>;
+  variablesGroups: VariablesGroup[];
 
   constructor() { 
 
     this.tables = []
 
   console.log("services works")
-
-
+  this.variablesGroups = []
+  this.variablesGroup$ = new BehaviorSubject<any>([])
   this.dataset$ = new BehaviorSubject<any>([])
   this.variables$ = new BehaviorSubject<any>([])
   this.file_infos$ = new BehaviorSubject<any>({})
@@ -68,11 +71,26 @@ export class DataService {
   }
 
 
+  addVariableGroup = (vg:VariablesGroup)=>{
 
+    this.variablesGroups.push(vg)
+    this.variablesGroup$.next(this.variablesGroups)
 
+  }
 
+  deleteVariableGroup = (vg:VariablesGroup)=>{
 
+    this.variablesGroups = this.variablesGroups.filter((variablesGroup:VariablesGroup)=>{
+      return(variablesGroup.name != vg.name)
+   })
+    this.variablesGroup$.next(this.variablesGroups)
+  }
 
+  modifyVariableGroup = (vg:VariablesGroup)=>{
+   let objIndex = this.variablesGroups.findIndex(((obj:VariablesGroup) => obj.name == vg.name));
+    this.variablesGroups[objIndex].variables = vg.variables
+    this.variablesGroup$.next(this.variablesGroups)
+  }
 
 
 

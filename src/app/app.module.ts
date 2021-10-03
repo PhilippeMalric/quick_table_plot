@@ -25,6 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GeneralViewComponent } from './pages/data/general-view/general-view.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CompareTwoDsComponent } from './pages/data/compare-two-ds/compare-two-ds.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { VariablesGroupComponent } from './components/variables-group/variables-group.component';
 
 
 @NgModule({
@@ -35,9 +38,12 @@ import { CompareTwoDsComponent } from './pages/data/compare-two-ds/compare-two-d
     FirstComponent,
     PageNotFoundComponent,
     GeneralViewComponent,
-    CompareTwoDsComponent
+    CompareTwoDsComponent,
+    VariablesGroupComponent
   ],
   imports: [
+    MatAutocompleteModule,
+    MatSelectModule,
     MatGridListModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,0 +1,17 @@
+<mat-card style="margin-top:10px">
+    <mat-card-header>
+        <mat-card-title>
+            {{variablesGroup.name}} 
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-chip-list  aria-label="Color selection">
+            <mat-chip *ngFor="let chip of variablesGroup.variables" color="primary" >
+              {{chip}}
+            </mat-chip>
+          </mat-chip-list>
+          <button mat-raised-button color="warn" (click)="deleteVariablesGroup()" style="margin-top:10px">Delete</button>
+    </mat-card-content>
+
+
+</mat-card>

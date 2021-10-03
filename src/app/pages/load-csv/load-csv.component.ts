@@ -37,7 +37,7 @@ export class LoadCsvComponent implements OnInit {
   nbEntree: any;
   myData: any;
   name = ""
-  
+  waiting = false
 
   constructor(
     private  changeDetectorRef: ChangeDetectorRef,
@@ -91,7 +91,7 @@ export class LoadCsvComponent implements OnInit {
 
   // Your applications input change listener for the CSV File
   uploadListener($event: any): void {
-
+    this.waiting = true
     // Select the files from the event
     const files = $event.srcElement.files;
     console.log('files', files);
@@ -122,7 +122,7 @@ export class LoadCsvComponent implements OnInit {
           return {pcNA: (nbNA / this.nbEntree),name:e}
 
         })
-
+        this.waiting = false
         console.log("---------------myData")
         console.log(this.myData)
         this.csvRecords = result

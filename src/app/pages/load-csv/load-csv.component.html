@@ -29,7 +29,7 @@
       /> 
       <button mat-raised-button color="primary" (click)="fileInput.click()" >Téléverser un fichier csv</button>
     </div>
-    <p >{{name}}</p>
+    <p >{{name}}</p><span *ngIf="waiting" style="color: red;">Loading</span>
   </div>
 
 

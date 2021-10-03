@@ -1,7 +1,6 @@
 .example-small-box, .example-large-box {
  
     display: flex;
-    align-items: center;
     justify-content: center;
     margin: auto;
     padding: 16px;
@@ -15,7 +14,7 @@
     width: 100px;
   }
   
-  .example-large-box[_ngcontent-dnt-c150] {
+  .example-large-box {
     margin: auto;
     height: auto;
     width: auto;
